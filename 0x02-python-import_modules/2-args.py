@@ -7,7 +7,7 @@ argv_len = len(sys.argv)
 print(f'{argv_len - 1}', end=' ')
 if argv_len == 2:
     print("argument:")
-elif argv_len < 2:
+elif argv_len > 2:
     print("arguments:")
 else:
     print("arguments.")
