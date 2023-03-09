@@ -12,8 +12,8 @@ elif argv_len > 2:
 else:
     print("argument.")
 
-for arg in sys.argv[1:]:
-    print(arg)
+for i in range(1, argv_len):
+    print(f'{i}: {sys.argv[i]}')
 
 if __name__ == "__main__":
     pass
