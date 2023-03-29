@@ -12,7 +12,6 @@ class Square:
         else:
             self.__size = int(size)
 
-
     def area(self):
         ''' returning the area of a square'''
         return self.__size ** 2
