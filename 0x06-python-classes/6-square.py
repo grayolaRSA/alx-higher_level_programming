@@ -51,29 +51,34 @@ class Square:
             Args:
             value (tuple): new position of square
             """
-        if isinstance(value, tuple) and len(value) == 2:
-            if all(isinstance(n, (int, float)) and n >= 0 for n in value):
-                self.__position = value
-            else:
-                raise TypeError("position must be tuple of 2 positive numbers")
+        if not isinstance(value, tuple) and len(value) == 2:
+            raise TypeError("position must be a tuple of 2 positive numbers")
+        elif not all(isinstance(n, (int)) and n >= 0 for n in value):
+            raise TypeError("position must be a tuple of 2 positive numbers")
+        else:
+            self.__position = value
 
     def area(self):
 
         """ Calculates the area of a square
-            Returns:
-            area
-            """
+                Returns:
+                area
+                """
 
         return self.__size ** 2
 
     def my_print(self):
 
-        """ Prints out the position of the square"""
+        """ Prints out the square"""
 
         if self.__size == 0:
             print("")
-        else:
-            for i in range(0, __self.size):
-                for j in range(0, __self.size):
-                    print("#", end="")
-                    print()
+
+        for i in range(self.__position[1]):
+            print("")
+        for i in range(self.__size):
+            for j in range(self.__position[0]):
+                print("", end="")
+            for j in range(self.__size):
+                print("#", end="")
+            print()
