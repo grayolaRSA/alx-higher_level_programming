@@ -52,9 +52,9 @@ class Square:
             value (tuple): new position of square
             """
         if not isinstance(value, tuple) and len(value) == 2:
-            raise TypeError("position must be a tuple of 2 positive numbers")
+            raise TypeError("position must be a tuple of 2 positive integers")
         elif not all(isinstance(n, (int)) and n >= 0 for n in value):
-            raise TypeError("position must be a tuple of 2 positive numbers")
+            raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
 
