@@ -37,24 +37,24 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__width = value
 
-        @property
-        def height(self):
-            """
-            Gets value of rectangle height (int)
-            """
+    @property
+    def height(self):
+        """
+        Gets value of rectangle height (int)
+        """
 
-            return self.__height
+        return self.__height
 
-        @height.setter
-        def height(self, value):
-            """
+    @height.setter
+    def height(self, value):
+        """
             changes the value of the rectangle height
             Args:
             value(int): new value of height
-            """
+        """
 
-            if type(value) != int:
-                raise TypeError("width must be an integer")
-            if value < 0:
-                raise ValueError("height must be >= 0")
-            self.__height = value
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
