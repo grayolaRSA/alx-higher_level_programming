@@ -1,0 +1,51 @@
+The module that prints full name
+===============================
+
+Import function from the module:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Checking if first_name and last_name passed correctly:
+
+    >>> say_my_name("Holberton", "School")
+    My name is Holberton School
+
+Checking if passing first name only works:
+
+    >>> say_my_name("Tongi")
+    My name is Tongi
+
+Checking if passing no argument works:
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Checking if passing None as the first_name raises error:
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: first_name must be a string
+
+Checking if passing None as the last_name raises error:
+
+    >>> say_my_name("Tongi", None)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: last_name must be a string
+
+Checking if passing number arguments works for first_name:
+
+    >>> say_my_name(4)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: first_name must be a string
+
+Checking if passing number arguments works for last_name:
+
+    >>> say_my_name("Tongi", 2)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: last_name must be a string
