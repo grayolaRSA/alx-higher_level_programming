@@ -13,7 +13,7 @@ Checking if first_name and last_name passed correctly:
 Checking if passing first name only works:
 
     >>> say_my_name("Tongi")
-    My name is Tongi
+    My name is Tongi 
 
 Checking if passing no argument works:
 
