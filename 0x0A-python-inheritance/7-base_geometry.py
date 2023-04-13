@@ -27,6 +27,6 @@ class BaseGeometry:
         self.value = value
 
         if type(value) is not int:
-            raise TypeError(f"{value} must be an integer".format(value))
-        if value < 0:
-            raise ValueError(str(value) + " must be greater than 0")
+            raise TypeError(f"{name} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError(str(name) + " must be greater than 0")
