@@ -134,6 +134,6 @@ class Rectangle(Base):
         dict_atr = {}
 
         for key in r_atr:
-                dict_atr[key] = getattr(self, key)
+            dict_atr[key] = getattr(self, key)
 
         return dict_atr
