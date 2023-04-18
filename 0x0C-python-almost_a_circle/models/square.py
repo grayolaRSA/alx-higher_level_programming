@@ -32,7 +32,7 @@ class Square(Rectangle):
         string special method for square class
         """
         str_sqr = "[Square]"
-        str_id = "({})".format(self.id)
+        str_id = " ({})".format(self.id)
         str_yx = "{}/{} - ".format(self.x, self.y)
         str_size = "{}".format(self.width)
 
@@ -43,31 +43,18 @@ class Square(Rectangle):
         method to update square class using *args and **kwargs
         -use of args or kwargs depends on conditions
         """
-        if args is not None and len(args) != 0:
+        if args:
             r_args = ('id', 'size', 'x', 'y')
-            for i in range(len(args)):
-                if r_args[i] == 'size':
-                    setattr(self, 'width', args[i])
-                    setattr(self, 'height', args[i])
-                else:
-                    setattr(self, r_args[i], args[i])
-        else:
+            for i, arg in enumerate(args):
+                    setattr(self, r_args[i], arg)
+        elif kwargs:
             for key, value in kwargs.items():
-                if key == 'size':
-                    setattr(self, 'width', value)
-                    setattr(self, 'height', value)
-                else:
-                    setattr(self, key, value)
+                setattr(self, key, value)
+        else:
+            pass
 
     def to_dictionary(self):
         """ Returns a dictionary with attributes """
         sq_atr = ['id', 'size', 'x', 'y']
-        dict_sq = {}
 
-        for key in sq_atr:
-            if key == 'size':
-                dict_sq[key] = getattr(self, 'width')
-            else:
-                dict_sq[key] = getattr(self, key)
-
-        return dict_sq
+        return {key: getattr(self, key) for key in sq_atr}
