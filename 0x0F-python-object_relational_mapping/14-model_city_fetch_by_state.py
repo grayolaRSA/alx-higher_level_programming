@@ -24,7 +24,7 @@ if __name__ == '__main__':
     # Print the City objects
     for city in cities:
         state_name = session.query(State.name).\
-            filter(State.id == city.state_id).scalar()
+            filter(State.id == city.state_id).order_by(City.id.asc()).scalar()
         print("{}: ({}) {}".format(state_name, city.id, city.name))
 
     # Close the session
