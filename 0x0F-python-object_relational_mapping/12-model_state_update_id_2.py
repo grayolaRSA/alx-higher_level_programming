@@ -5,7 +5,7 @@ Update state with id=2 to New Mexico
 import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == '__main__':
@@ -21,4 +21,4 @@ if __name__ == '__main__':
         updateState.name = 'New Mexico'
         session.commit()
 
-    print(newState.id)
+    print(updateState.id)
