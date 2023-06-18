@@ -11,21 +11,15 @@ from sqlalchemy.orm import sessionmaker
 if __name__ == '__main__':
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
-    # Create the engine and session
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
                            format(username, password, database),
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Retrieve all City objects sorted by id
-    cities = session.query(City).order_by(City.id).all()
+    cities = session.query(City).all()
 
-    # Print the City objects
     for city in cities:
         state_name = session.query(State.name).\
-            filter(State.id == city.state_id).order_by(City.id.asc()).scalar()
+            filter(State.id == city.state_id).scalar()
         print("{}: ({}) {}".format(state_name, city.id, city.name))
-
-    # Close the session
-    session.close()
