@@ -7,10 +7,12 @@ import sys
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        data = {'q': sys.argv[1]}
-    else:
-        data = {'q': ""}
+    data = {'q': ""}
+
+    try:
+        data['q'] = sys.argv[1]
+    except TypeError:
+        pass
 
         r = requests.post('http://0.0.0.0:5000/search_user', data)
 
