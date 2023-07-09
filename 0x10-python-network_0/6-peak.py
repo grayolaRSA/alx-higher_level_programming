@@ -3,6 +3,15 @@
 
 
 def find_peak(list_of_integers):
+    """Find a peak value within a list of integers.
+
+    Args:
+        list_of_integers (list): A list of integers.
+
+    Returns:
+        int: The peak value found in the list.
+
+    """
     if list_of_integers == []:
         return None
 
