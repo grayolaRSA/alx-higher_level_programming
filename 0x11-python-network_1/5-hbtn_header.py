@@ -7,8 +7,8 @@ import sys
 
 
 if __name__ == "__main__":
-    try:
-        r = requests.get(sys.argv[1])
+    r = requests.get(sys.argv[1])
+    if 'X-Request-Id' in r.headers:
         print(r.headers['X-Request-Id'])
-    except ValueError:
-        pass
+    else:
+        exit(1)
