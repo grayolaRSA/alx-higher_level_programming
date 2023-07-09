@@ -10,7 +10,8 @@ if __name__ == "__main__":
     data = {'q': ""}
 
     try:
-        data['q'] = sys.argv[1]
+        if len(sys.argv) > 1:
+            data['q'] = sys.argv[1]
     except ValueError:
         pass
 
