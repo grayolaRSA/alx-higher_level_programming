@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Python script that takes in a URL and displays body of response
+python script that takes URL and displays response or error code
 """
 from urllib import request, error
 import sys
