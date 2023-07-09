@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Python script that fetches a UR
+python script that gets alx webpage using requests module
 """
 import requests
 
