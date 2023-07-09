@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Python script that sends a URL request with a letter as a parameter
+python script that sends URL request with letter as parameter
 """
 import requests
 import sys
@@ -22,5 +22,5 @@ if __name__ == "__main__":
             print("No result")
         else:
             print("[{}] {}".format(json_o.get('id'), json_o.get('name')))
-    except TypeErrorc:
+    except TypeError:
         print("Not a valid JSON")

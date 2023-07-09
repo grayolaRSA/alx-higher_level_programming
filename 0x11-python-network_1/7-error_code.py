@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Python script that sends a request to the URL
- and displays body of response or error message
+Python script that sends URL request
+ and displays response or error message
 """
 import requests
 import sys
