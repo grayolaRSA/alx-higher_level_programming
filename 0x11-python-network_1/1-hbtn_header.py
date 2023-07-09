@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Python script that displays value of X-Request-Id variable from a URL request
+python script that displays value of URL header
 """
 import urllib.request
 import sys

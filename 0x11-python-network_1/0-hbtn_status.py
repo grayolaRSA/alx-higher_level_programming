@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Python script that fetches from website"""
+"""python script that fetches from the ALX website"""
 import urllib.request
 
 
