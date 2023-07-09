@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Python script that sends URL request and displays X-request variable
+python script that sends URL request and displays requested header variable
 """
 import requests
 import sys
