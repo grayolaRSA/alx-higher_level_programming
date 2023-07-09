@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Python script that sends a POST request to the URL and
-to an URL with the letter as a parameter
+Python script that sends POST request to URL with letter as parameter
 """
 import requests
 import sys
@@ -12,7 +11,7 @@ if __name__ == "__main__":
 
     try:
         data['q'] = sys.argv[1]
-    except:
+    except ValueError:
         pass
 
     r = requests.post('http://0.0.0.0:5000/search_user', data)
@@ -23,5 +22,5 @@ if __name__ == "__main__":
             print("No result")
         else:
             print("[{}] {}".format(json_o.get('id'), json_o.get('name')))
-    except:
+    except ValueError:
         print("Not a valid JSON")
