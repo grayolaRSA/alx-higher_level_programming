@@ -1,0 +1,33 @@
+Integer Validator Doctests
+==========================
+
+Import classes into doctest:
+       >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+
+Checking for module docstring:
+	 >>> m = __import__('7-base_geometry').__doc__
+	 >>> len(m) > 1
+	 True
+
+Checking for method docstring:
+	 >>> f = __import__('7-base_geometry').BaseGeometry.area.__doc__
+	 >>> len(f) > 1
+	 True
+
+	 >>> g = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+	 >>> len(g) > 1
+	 True
+
+Checking for passing non-integer value:
+	 >>> BaseGeometry.integer_validator('10', '5')
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Checking for passing number less than zero for value:
+	 >>> BaseGeometry.integer_validator('tom', -2)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: integer_validator() missing 1 required positional argument: 'value'

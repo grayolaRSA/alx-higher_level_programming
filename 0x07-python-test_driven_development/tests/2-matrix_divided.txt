@@ -1,0 +1,86 @@
+The matrix scalar division module
+============================
+
+import function from the module:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Division of matrix by 4:
+
+    >>> matrix_divided([[4, 7, 3], [13, 5, 6]], 4)
+    [[1.0, 1.75, 0.75], [3.25, 1.25, 1.5]]
+
+Division of matrix by a float number:
+
+    >>> matrix_divided([[12, 37, 55], [5.38, 2.74, -6], [1.23, -4.76, 0]], 7.6)
+    [[1.58, 4.87, 7.24], [0.71, 0.36, -0.79], [0.16, -0.63, 0.0]]
+
+Division of matrix by 0:
+
+    >>> matrix_divided([[4, 7, 3], [13, 5, 6]], 0)
+    Traceback (most recent call last):
+    	      ...
+    ZeroDivisionError: division by zero
+
+Division of an empty matrix:
+
+    >>> matrix_divided([], 3)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Division with tuple argument:
+
+    >>> matrix_divided((4, 5, 6), 7)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Division of a matrix with rows that arent same size:
+
+    >>> matrix_divided([[8, -5, 0.43], [6, 4], [89]], 29)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: Each row of the matrix must have the same size
+
+Division of a matrix whose individulal elements aren't all float/int numbers:
+
+    >>> matrix_divided([["String", "List"], ["9.43", "ALX"]], 5)
+    Traceback (most recent call last):
+     	       ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Division of matrix with div being a string
+
+    >>> matrix_divided([[11, -92], [134, 3]], "6")
+    Traceback (most recent call last):
+    	      ...
+    TypeError: div must be a number
+
+Division of a matrix with elements that look like numbers but arent integer/float numbers:
+
+    >>> matrix_divided([['9', -5.3], ["2.2", 71]], 4)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Division of a matrix that includes an empty list:
+
+    >>> matrix_divided([[], [8, -3.42]], 9)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+Division of a matrix with a tuple:
+
+    >>> matrix_divided([[12, 9.52], [-91, 42], (5, 0.52)], 23)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Division of a matrix with div being a list
+
+    >>> matrix_divided([[9.2, -91], [12, 48]], [5])
+    Traceback (most recent call last):
+    	      ...
+    TypeError: div must be a number

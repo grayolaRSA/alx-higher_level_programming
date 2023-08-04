@@ -1,0 +1,59 @@
+Doctest for 0-add_integer module
+================================
+
+Documentation for importing the function:
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+Checking for module docstring:
+	 >>> m = __import__("0-add_integer").__doc__
+	 >>> len(m) > 1
+	 True
+
+Checking for function docstring:
+	 >>> f = __import__("0-add_integer").add_integer.__doc__
+         >>> len(f) > 1
+         True
+
+Check for normal operation of function:
+      >>> add_integer(3, 4)
+      7
+
+Function has fixed value for b hence only one variable required:
+	 >>> add_integer(12)
+	 110
+
+Check for passing of negative integers:
+      >>> add_integer(4, -8)
+      -4
+
+Check for passing of floats(these will first be changed into integers):
+      >>> add_integer(1.5, 2)
+      3
+
+Check for number added to non-number:
+      >>> add_integer(5, "total")
+      Traceback (most recent call last):
+      ...
+      TypeError: b must be an integer
+
+Check for passing of more than 2 arguments:
+      >>> add_integer(4, 1, 9)
+      Traceback (most recent call last):
+      ...
+      TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Check for large numbers passed:
+      >>> add_integer(100000000000000000000000, 1)
+      100000000000000000000001
+
+Checking for passed NaN:
+	 >>> add_integer(1, float('nan'))
+	 Traceback (most recent call last):
+	 ...
+	 ValueError: cannot convert float NaN to integer
+
+Checking for passed inf:
+	 >>> add_integer(1, float('inf'))
+	 Traceback (most recent call last):
+	 ...
+	 OverflowError: cannot convert float infinity to integer
